@@ -1,0 +1,22 @@
+<?php
+
+namespace App\Http\Resources;
+
+use Illuminate\Http\Request;
+use Illuminate\Http\Resources\Json\JsonResource;
+
+class TimeSlotResource extends JsonResource
+{
+    public function toArray(Request $request): array
+    {
+        return [
+            'id'               => $this->id,
+            'day_of_week'      => $this->day_of_week,
+            'start_time'       => $this->start_time,
+            'end_time'         => $this->end_time,
+            'duration_minutes' => $this->duration_minutes,
+            'max_participants' => $this->max_participants,
+            'is_active'        => $this->is_active,
+        ];
+    }
+}
